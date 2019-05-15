@@ -1,0 +1,28 @@
+{
+  "name": "resturant-place",
+  "version": "1.0.0",
+  "description": "week-6  project by Sara &amp; Aman",
+  "main": "index.js",
+  "scripts": {
+    "test": "NODE_ENV=test node test/db_test.js",
+    "server": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lotus-1/Resturant-Place.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lotus-1/Resturant-Place/issues"
+  },
+  "homepage": "https://github.com/lotus-1/Resturant-Place#readme",
+  "dependencies": {
+    "nodemon": "^1.19.0"
+  },
+  "devDependencies": {
+    "tap": "^13.1.9",
+    "tap-spec": "^5.0.0",
+    "tape": "^4.10.1"
+  }
+}
