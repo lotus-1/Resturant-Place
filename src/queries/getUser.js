@@ -1,7 +1,7 @@
 const databaseConnection = require('../database/db_connection.js');
 
 const getUser = cb => {
-  databaseConnection.query('SELECT * FROM users', (err, res) => {
+  databaseConnection.query('SELECT * FROM saraman', (err, res) => {
     if (err) {
       cb(err);
     } else {
