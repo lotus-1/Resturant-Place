@@ -2,21 +2,15 @@ const { readFile } = require("fs");
 const path = require("path");
 const qs = require("qs");
 
-//const getUser = require("./queries/getUser.js");
-//const postUser = require("./queries/postUser.js");
+const getUser = require("./queries/getUser.js");
+const postUser = require("./queries/postUser.js");
 
 const serverError = (err, response) => {
   response.writeHead(500, "Content-Type:text/html");
   response.end("<h1>Sorry, there was a problem loading the homepage</h1>");
   console.log(err);
 }
-//   //     const getUsersHandler = response => {
-//   //   getData((err, users) => {
-//   //     if (err) return serverError(err, response);
-//   //     response.writeHead(200, { 'Content-Type': 'application/json' });
-//   //     response.end(JSON.stringify());
-//   //   });
-//   // };
+
 
 const handlerHome = response => {
   const filepath = path.join(__dirname, '..', 'public', 'index.html');
@@ -24,6 +18,29 @@ const handlerHome = response => {
     if (err) return serverError(err, response);
     response.writeHead(200, { 'Content-Type': 'text/html' });
     response.end(file);
+  });
+};
+
+const getUsersHandler = response => {
+  getData((err, users) => {
+    if (err) return serverError(err, response);
+    response.writeHead(200, { 'Content-Type': 'application/json' });
+    response.end(JSON.stringify(users));
+  });
+};
+
+const postUserHandler = (request, response) => {
+  let data = '';
+  request.on('data', chunk => {
+    data += chunk;
+  });
+  request.on('end', () => {
+    const { name, location } = qs.parse(data);
+    postUser(name, location, err => {
+      if (err) return serverError(err, response);
+      response.writeHead(302, { 'Location': '/' });
+      response.end()
+    });
   });
 };
 
@@ -49,6 +66,8 @@ const errorHandler = response => {
 
 module.exports = {
   handlerHome,
+  getUsersHandler,
+  postUserHandler,
   publicHandler,
   errorHandler
 };
