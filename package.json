@@ -18,9 +18,12 @@
   },
   "homepage": "https://github.com/lotus-1/Resturant-Place#readme",
   "dependencies": {
-    "nodemon": "^1.19.0"
+    "env2": "^2.2.2",
+    "nodemon": "^1.19.0",
+    "pg": "^7.11.0"
   },
   "devDependencies": {
+    "dotenv": "^8.0.0",
     "tap": "^13.1.9",
     "tap-spec": "^5.0.0",
     "tape": "^4.10.1"

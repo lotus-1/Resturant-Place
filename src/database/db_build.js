@@ -8,4 +8,4 @@ const sql = fs.readFileSync(sqlPath).toString();
 
 const runDbBuild = cb => dbConnection.query(sql, cb)
 
-module.exports = runDbBuild
+module.exports = runDbBuild;
