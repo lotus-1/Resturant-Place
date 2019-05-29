@@ -18,7 +18,7 @@ CREATE TABLE customers (
   last_name VARCHAR(30) NOT NULL,
   working VARCHAR(30) NOT NULL,
   location VARCHAR(30) NOT NULL,
-  restaurant_id INTEGER REFERENCES restaurant(id)
+  customers_id INTEGER REFERENCES restaurant(id)
 );
 
 CREATE TABLE rating (

@@ -1,7 +1,11 @@
-document.getElementById("search").addEventListener("click", function(event) {
+document.getElementById("searchButton").addEventListener("click", function(event) {
    event.preventDefult();
 
-   fetch("/search")
+
+ var xhttp = new XMLHttpRequest();
+
+
+   fetch("/add")
     .then(function(response) {
       return response.json();
     })
@@ -15,4 +19,13 @@ document.getElementById("search").addEventListener("click", function(event) {
         console.log(error);
      });
 });
- 
+
+
+ var request = new XMLHttpRequest();
+  request.open('GET', url);
+   request.responseType = 'text';
+    request.onload = function() {
+       pomeDispaly.textContent = request.response;
+    };
+
+     request.send();
