@@ -41,8 +41,8 @@ INSERT INTO restaurant (name, location, business_owner, type_of_restaurant) VALU
 INSERT INTO customers (first_name, last_name, working, location) VALUES
 ('Fares', 'Halaby', 'Director of a gas station', 'Daliat El Carmel');
 INSERT INTO customers (first_name, last_name, working, location) VALUES
-('Adriana', 'Gel', 'Fashion Designer', 'Kiryate Shmone');
+('Adriana', 'Levi', 'Fashion Designer', 'Kiryate Shmone');
 INSERT INTO customers (first_name, last_name, working, location) VALUES
-('Noam', 'Levi', 'Programmer', 'Krayot');
+('Noam', 'Gel', 'Programmer', 'Krayot');
 
 COMMIT;

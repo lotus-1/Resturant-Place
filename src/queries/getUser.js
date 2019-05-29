@@ -10,4 +10,13 @@ const getUser = (cb) => {
   });
 };
 
+const getUserData = (cb) => {
+  databaseConnection.query('SELECT * FROM customers', (err, res) => {
+    if (err) {
+      cb(err);
+    } else {
+      cb(null, res.rows);
+    }
+  });
+};
 module.exports = getUser;

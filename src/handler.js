@@ -21,7 +21,7 @@ const handlerHome = response => {
 };
 
 const getUserHandler = response => {
-  getData((err, restaurant) => {
+  getUser((err, restaurant) => {
     if (err) return serverError(err, response);
     response.writeHead(200, { "Content-Type": "application/json" });
     response.end(JSON.stringify(restaurant));
