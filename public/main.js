@@ -7,9 +7,6 @@ document
       .then(function(response) {
         return response.json();
       })
-      const options {
-        method : 'post'
-      };
       .then(function(err, data) {
         if (err) {
           console.log(err);
@@ -41,3 +38,10 @@ document
         }
       });
   });
+      // fetch('/add')
+      // .then(function(response) {
+      //   return response.json();
+      // })
+      // .then(function(data) {
+      //
+      // })

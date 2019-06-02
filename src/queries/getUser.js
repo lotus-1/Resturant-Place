@@ -19,4 +19,18 @@ const getUserData = (cb) => {
     }
   });
 };
-module.exports = getUser;
+const getData = (cb) => {
+  database.query('SELECT * FROM users WHERE email=$1 and password=$2, [email, password]', (err, res) => {
+    if (err){
+      cb(err) 
+    } else {
+      cb(null, res.rows);
+    }
+  });
+};
+
+module.exports = {
+   getUser,
+   getUserData,
+   getData
+ };

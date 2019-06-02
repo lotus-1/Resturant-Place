@@ -3,6 +3,7 @@ BEGIN;
 DROP TABLE IF EXISTS restaurant CASCADE;
 DROP TABLE IF EXISTS customers CASCADE;
 DROP TABLE IF EXISTS rating CASCADE;
+DROP TABLE IF EXISTS users;
 
 CREATE TABLE restaurant (
   id SERIAL PRIMARY KEY,
@@ -28,7 +29,11 @@ CREATE TABLE rating (
   customers_id INTEGER REFERENCES customers(id)
 );
 
-
+CREATE TABLE IF NOT EXISTS users (
+  id SERIAL PRIMARY KEY,
+  email VARCHAR(100) NOT NULL,
+  password VARCHAR(100) NOT NULL
+);
 
 INSERT INTO restaurant (name, location, business_owner, type_of_restaurant) VALUES
 ('Lospago', 'Osfia', 'Walaa', 'Italian');
@@ -44,5 +49,10 @@ INSERT INTO customers (first_name, last_name, working, location) VALUES
 ('Adriana', 'Levi', 'Fashion Designer', 'Kiryate Shmone');
 INSERT INTO customers (first_name, last_name, working, location) VALUES
 ('Noam', 'Gel', 'Programmer', 'Krayot');
+
+
+INSERT INTO users (email, password) VALUES ('saeedsara142@gmail.com', 756598);
+INSERT INTO users (email, password) VALUES ('amanhalabyar7@gmail.com', 123456);
+
 
 COMMIT;
