@@ -10,8 +10,8 @@ const router = (request, response) => {
 
   if (url === '/') {
     handlerHome(response);
-  } else if (url.includes('/public')) {
-    handlerPublic(response, url);
+  // } else if (url.includes('/public')) {
+  //   handlerPublic(response, url);
   } else if (url === '/getUser') {
     getUserHandler(response);
   } else if (url === '/postUser') {
